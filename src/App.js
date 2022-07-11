@@ -1,5 +1,9 @@
+import { useState } from 'react'
+import Average from './Average'
+import Info from './Info'
+
 function App() {
-  return <h1>Hello react!</h1>;
+  return <Info />
 }
 
-export default App;
+export default App
