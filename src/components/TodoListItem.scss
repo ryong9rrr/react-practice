@@ -21,7 +21,7 @@
     }
 
     // 체크되었을 때 보여 줄 스타일
-    & .checked {
+    &.checked {
       svg {
         color: #22b8cf;
       }
