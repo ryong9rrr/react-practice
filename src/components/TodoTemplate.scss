@@ -1,0 +1,22 @@
+.TodoTemplate {
+  width: 512px;
+  margin: 6rem auto 0;
+  border-radius: 4px;
+  // 이걸 안하면 border-radius가 적용이 안된다.
+  // 이런 식으로 하면 최 상단에 border-radius를 적용시켜도 됨!
+  overflow: hidden;
+
+  .app-title {
+    background: #22b8cf;
+    color: white;
+    height: 4rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content {
+    background: white;
+  }
+}

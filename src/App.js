@@ -1,5 +1,15 @@
+import './App.css';
+import TodoInsert from './components/TodoInsert';
+import TodoList from './components/TodoList';
+import TodoTemplate from './components/TodoTemplate';
+
 function App() {
-  return <h1>Hello react!</h1>;
+  return (
+    <TodoTemplate>
+      <TodoInsert />
+      <TodoList />
+    </TodoTemplate>
+  );
 }
 
 export default App;

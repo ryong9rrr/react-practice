@@ -1,1 +1,6 @@
-리액트 연습용 저장소입니다.
+# 일정 관리 웹 애플리케이션
+
+- node-sass
+- classnames
+- react-icons
+- prettier
