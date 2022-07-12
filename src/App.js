@@ -1,5 +1,11 @@
+import StyledComponent from './StyledComponent'
+
 function App() {
-  return <h1>Hello react!</h1>;
+  return (
+    <div>
+      <StyledComponent />
+    </div>
+  )
 }
 
-export default App;
+export default App
