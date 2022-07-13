@@ -1,11 +1,21 @@
+.TodoListItem-virtualized {
+  & + & {
+    border-top: 1px solid #dee2e6;
+  }
+
+  &:nth-child(even) {
+    background: #f8f9fa;
+  }
+}
+
 .TodoListItem {
   padding: 1rem;
   display: flex;
   align-items: center;
   // UI를 위히 짝수번째 배경만 바꿔주기... ㄷㄷ(이렇게 할 수도 있구나)
-  &:nth-child(even) {
-    background: #f8f9fa;
-  }
+  // &:nth-child(even) {
+  //   background: #f8f9fa;
+  // }
 
   .checkbox {
     cursor: pointer;
@@ -45,7 +55,7 @@
 
   // 엘리먼트 사이에 테두리를 넣어줌
   // (이렇게 하면 2번째 엘리먼트 부터 적용... 캬)
-  & + & {
-    border-top: 1px solid #dee2e6;
-  }
+  // & + & {
+  //   border-top: 1px solid #dee2e6;
+  // }
 }
