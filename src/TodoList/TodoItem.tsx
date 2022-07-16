@@ -1,15 +1,22 @@
+import { ChangeEvent } from 'react'
 import { useRecoilState } from 'recoil'
-import { todoListState } from './recoilAtom'
+import { todoListState } from './core/store'
+import { Todo } from './core/types'
 
-function TodoItem({ item }) {
+interface TodoItemProps {
+  item: Todo
+}
+
+function TodoItem({ item }: TodoItemProps) {
   // getter, setter 둘다 가져오려면 useRecoilState()
   const [todoList, setTodoList] = useRecoilState(todoListState)
   const index = todoList.findIndex((listItem) => listItem === item)
 
-  const editItemText = ({ target: { value } }) => {
+  const editItemText = (e: ChangeEvent) => {
+    const value = (e.target as HTMLInputElement).value
     const newList = replaceItemAtIndex(todoList, index, {
       ...item,
-      text: value,
+      text: value
     })
 
     setTodoList(newList)
@@ -18,7 +25,7 @@ function TodoItem({ item }) {
   const toggleItemCompletion = () => {
     const newList = replaceItemAtIndex(todoList, index, {
       ...item,
-      isComplete: !item.isComplete,
+      isComplete: !item.isComplete
     })
 
     setTodoList(newList)
@@ -41,10 +48,10 @@ function TodoItem({ item }) {
 
 export default TodoItem
 
-function replaceItemAtIndex(arr, index, newValue) {
+function replaceItemAtIndex(arr: Todo[], index: number, newValue: Todo) {
   return [...arr.slice(0, index), newValue, ...arr.slice(index + 1)]
 }
 
-function removeItemAtIndex(arr, index) {
+function removeItemAtIndex(arr: Todo[], index: number) {
   return [...arr.slice(0, index), ...arr.slice(index + 1)]
 }

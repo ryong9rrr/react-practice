@@ -1,7 +1,18 @@
+import { atom } from 'recoil'
 import { selector } from 'recoil'
-import { todoListFilterState, todoListState } from './recoilAtom'
+import { FilterOptions, StatsState, Todo } from './types'
 
-export const filteredTodoListState = selector({
+export const todoListState = atom<Todo[]>({
+  key: 'todoListState',
+  default: []
+})
+
+export const todoListFilterState = atom<FilterOptions>({
+  key: 'todoListFilterState',
+  default: 'Show All'
+})
+
+export const filteredTodoListState = selector<Todo[]>({
   key: 'filteredTodoListState',
   get: ({ get }) => {
     const filter = get(todoListFilterState)
@@ -15,10 +26,10 @@ export const filteredTodoListState = selector({
       default:
         return list
     }
-  },
+  }
 })
 
-export const todoListStatsState = selector({
+export const todoListStatsState = selector<StatsState>({
   key: 'todoListStatsState',
   get: ({ get }) => {
     const todoList = get(todoListState)
@@ -31,7 +42,7 @@ export const todoListStatsState = selector({
       totalNum,
       totalCompletedNum,
       totalUncompletedNum,
-      percentCompleted,
+      percentCompleted
     }
-  },
+  }
 })

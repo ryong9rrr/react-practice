@@ -1,13 +1,14 @@
+import { ChangeEvent } from 'react'
 import { useRecoilState } from 'recoil'
-import { todoListFilterState } from './recoilAtom'
+import { todoListFilterState } from './core/store'
+import { FilterOptions } from './core/types'
 
 function TodoListFilters() {
   const [filter, setFilter] = useRecoilState(todoListFilterState)
 
-  console.log(filter)
-
-  const updateFilter = ({ target: { value } }) => {
-    setFilter(value)
+  // 이렇게 쓰는게 맞나... 제네릭으로 FilterOptions로만 타입을 좁힐 수는 없을까?
+  const updateFilter = (e: ChangeEvent) => {
+    setFilter((e.target as HTMLSelectElement).value as FilterOptions)
   }
 
   return (

@@ -1,9 +1,8 @@
 import { useRecoilValue } from 'recoil'
-import { todoListStatsState } from './recoilSelector'
+import { todoListStatsState } from './core/store'
 
 function TodoListStats() {
-  const { totalNum, totalCompletedNum, totalUncompletedNum, percentCompleted } =
-    useRecoilValue(todoListStatsState)
+  const { totalNum, totalCompletedNum, totalUncompletedNum, percentCompleted } = useRecoilValue(todoListStatsState)
 
   const formattedPercentCompleted = Math.round(percentCompleted * 100)
 

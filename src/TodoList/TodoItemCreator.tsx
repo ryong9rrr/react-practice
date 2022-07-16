@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import { useSetRecoilState } from 'recoil'
-import { todoListState } from './recoilAtom'
+import { todoListState } from './core/store'
 
 function TodoItemCreator() {
   const [inputValue, setInputValue] = useState('')
@@ -13,14 +13,14 @@ function TodoItemCreator() {
       {
         id: getId(),
         text: inputValue,
-        isComplete: false,
-      },
+        isComplete: false
+      }
     ])
     setInputValue('')
   }
 
-  const onChange = ({ target: { value } }) => {
-    setInputValue(value)
+  const onChange = (e: ChangeEvent) => {
+    setInputValue((e.target as HTMLInputElement).value)
   }
 
   return (
