@@ -1,5 +1,12 @@
+import React from 'react'
+import TodoList from './TodoList'
+
 function App() {
-  return <h1>Hello react!</h1>;
+  return (
+    <React.Fragment>
+      <TodoList />
+    </React.Fragment>
+  )
 }
 
-export default App;
+export default App

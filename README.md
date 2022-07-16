@@ -1,1 +1,5 @@
-리액트 연습용 저장소입니다.
+# Recoil 튜토리얼
+
+recoil 설치
+
+- `yarn add recoil`
