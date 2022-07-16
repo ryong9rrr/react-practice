@@ -1,1 +1,3 @@
-리액트 연습용 저장소입니다.
+# Modal-Backdrop Todo
+
+유데미 nextjs 섹션2 강의 중...
