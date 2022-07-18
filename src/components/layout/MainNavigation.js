@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useFavorites } from '../../store/favorites-context'
 import classes from './MainNavigation.module.css'
 
 const MainNavigation = () => {
+  const favoritesCtx = useFavorites()
+
   return (
     <header className={classes.header}>
       <div className={classes.logo}>React Meetups</div>
@@ -15,7 +18,10 @@ const MainNavigation = () => {
             <Link to="/new-meetup">New Meetup</Link>
           </li>
           <li>
-            <Link to="/favorites">Favorites</Link>
+            <Link to="/favorites">
+              Favorites
+              <span className={classes.badge}>{favoritesCtx.totalFavorites}</span>
+            </Link>
           </li>
         </ul>
       </nav>
