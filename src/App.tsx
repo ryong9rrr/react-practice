@@ -1,10 +1,9 @@
 import React from 'react'
-import TodoList from './TodoList'
 
 function App() {
   return (
     <React.Fragment>
-      <TodoList />
+      <h1>Hello TS React!</h1>
     </React.Fragment>
   )
 }

@@ -1,5 +1,4 @@
-# Recoil 튜토리얼
+# TS React Boilerplate
 
-recoil 설치
-
-- `yarn add recoil`
+- yarn
+- React + TS + ESLint + Prettier
