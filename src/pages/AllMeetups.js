@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import MeetupList from '../components/meetups/MeetupList'
+import { MeetupList } from '../components/meetups'
 import { FIREBASE_URL } from '../core/api'
 
 const AllMeetupsPage = () => {

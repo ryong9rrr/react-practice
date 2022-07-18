@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from '../ui/Card'
+import { Card } from '../ui'
 import classes from './MeetupItem.module.css'
 
 const MeetupItem = ({ meetup }) => {

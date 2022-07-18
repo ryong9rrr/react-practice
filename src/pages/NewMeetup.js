@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import NewMeetupForm from '../components/meetups/NewMeetupForm'
+import { NewMeetupForm } from '../components/meetups'
 import { FIREBASE_URL } from '../core/api'
 
 const NewMeetupPage = () => {

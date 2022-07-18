@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import Card from '../ui/Card'
+import { Card } from '../ui'
 import classes from './NewMeetupForm.module.css'
 
 const NewMeetupForm = ({ onSubmit }) => {
