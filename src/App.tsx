@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
+import NewTodo from './components/NewTodo'
+import TodoList from './components/TodoList'
+import { Todo } from './todo.model'
+import { makeRandomNumber } from './utils'
 
-function App() {
+const App: React.FC = () => {
+  const [todos, setTodos] = useState<Todo[]>([])
+
+  const handleSubmit = (text: string) => {
+    const id = makeRandomNumber().toString()
+    const newTodo: Todo = { id, text }
+    setTodos((prevTodos) => [...prevTodos, newTodo])
+  }
+
+  const handleRemove = (todoId: string) => {
+    setTodos((prevTodos) => {
+      return prevTodos.filter((todo) => todo.id !== todoId)
+    })
+  }
+
   return (
-    <React.Fragment>
-      <h1>Hello TS React!</h1>
-    </React.Fragment>
+    <div className="App">
+      <NewTodo onSubmit={handleSubmit} />
+      <TodoList items={todos} onRemove={handleRemove} />
+    </div>
   )
 }
 
