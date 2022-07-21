@@ -1,4 +1,1 @@
-# TS React Boilerplate
-
-- yarn
-- React + TS + ESLint + Prettier
+# 유데미 타입스크립트 섹션 14 - 리액트 + 타입스크립트 간단한 투두리스트 예제
